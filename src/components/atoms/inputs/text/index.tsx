@@ -9,7 +9,7 @@ const TextInput: React.FC<TextInputProps> = ({ label, ...props }) => {
   return (
     <>
       <label>{label}</label>
-      <input type="text" {...props} className={styles.input} />
+      <input {...props} className={styles.input} />
     </>
   );
 };

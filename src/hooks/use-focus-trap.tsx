@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 
-const useFocusTrap = (active: boolean, controlFirstFocus: boolean) => {
+const useFocusTrap = (dummyRealign: number, controlFirstFocus: boolean) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
 
-    if (!active || !container) return;
+    if (!container) return;
 
     const focusableElements = container.querySelectorAll<HTMLElement>(
       'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
@@ -36,13 +36,12 @@ const useFocusTrap = (active: boolean, controlFirstFocus: boolean) => {
 
     document.addEventListener("keydown", handleFocusTrap);
 
-    // Initial focus
     if (!controlFirstFocus) firstFocusableElement?.focus();
 
     return () => {
       document.removeEventListener("keydown", handleFocusTrap);
     };
-  }, [active, controlFirstFocus]);
+  }, [dummyRealign, controlFirstFocus]);
 
   return containerRef;
 };

@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Heading1 from "../../components/atoms/headings/heading1";
 import Para from "../../components/atoms/para";
-import Modal from "../../components/molecules/modal";
+import Modal, { ModalHandle } from "../../components/molecules/modal";
 import CreatePost from "../../components/organisms/create-post";
-import styles from "./styles.module.css";
+import LoginRegister from "../../components/organisms/login-register";
 import AsButton from "../../hocs/as-button";
-import Login from "../../components/organisms/login";
+import styles from "./styles.module.css";
 
 const useUserDetails = () => {
   return { name: "Jane" };
@@ -16,12 +16,18 @@ const Dashboard = () => {
   const isLoggedIn = false;
   const { name } = useUserDetails();
 
+  const modalRef = useRef<ModalHandle | null>(null);
+
   const handleCreateClick = () => {
     setShowLoginModal(true);
   };
 
   const handleCloseModal = () => {
     setShowLoginModal(false);
+  };
+
+  const handleViewChange = () => {
+    modalRef.current?.realignFocus();
   };
 
   return (
@@ -34,15 +40,15 @@ const Dashboard = () => {
             community 🤗
           </Para>
           <div className={styles.posts}>
-            <AsButton activate={!isLoggedIn}>
-              <CreatePost onClick={handleCreateClick} />
+            <AsButton onClick={handleCreateClick} activate={!isLoggedIn}>
+              <CreatePost />
             </AsButton>
           </div>
         </main>
       </div>
       {showLoginModal && (
-        <Modal onClose={handleCloseModal} controlFirstFocus>
-          <Login />
+        <Modal onClose={handleCloseModal} controlFirstFocus ref={modalRef}>
+          <LoginRegister onViewChange={handleViewChange} />
         </Modal>
       )}
     </>

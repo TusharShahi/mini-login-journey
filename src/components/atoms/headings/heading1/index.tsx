@@ -6,12 +6,12 @@ const Heading1: React.FC<
     variant?: "banner";
   }
 > = (props) => {
-  const { upperCase, variant = "default" } = props;
+  const { upperCase, variant = "default", ...otherProps } = props;
 
   const className = `${styles.heading} ${upperCase ? styles.upperCase : ""} ${
     styles[variant]
   }`;
-  return <h1 {...props} className={className} />;
+  return <h1 {...otherProps} className={className} />;
 };
 
 export default Heading1;

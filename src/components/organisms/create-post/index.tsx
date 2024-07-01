@@ -7,11 +7,9 @@ const PostIcon = () => {
   return <span>💬</span>;
 };
 
-const CreatePost: React.FC<{
-  onClick: () => void;
-}> = ({ onClick }) => {
+const CreatePost = () => {
   return (
-    <div className={styles.wrapper} onClick={onClick}>
+    <div className={styles.wrapper}>
       <Heading2>Create post</Heading2>
       <TextBox
         icon={<PostIcon />}

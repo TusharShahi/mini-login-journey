@@ -1,10 +1,17 @@
 import Login from "../../components/organisms/login";
 import styles from "./styles.module.css";
-const LoginScreen = () => {
+
+interface LoginScreenProps {
+  onLogin: () => void;
+}
+
+const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin: handleLogin }) => {
   return (
-    <div className={styles.content}>
-      <Login />
-    </div>
+    <main>
+      <div className={styles.content}>
+        <Login onRegisterClick={() => null} onLogin={handleLogin} />
+      </div>
+    </main>
   );
 };
 

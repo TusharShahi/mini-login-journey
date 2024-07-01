@@ -5,11 +5,11 @@ const Heading2: React.FC<
     variant?: "content";
   }
 > = (props) => {
-  const { variant = "" } = props;
+  const { variant = "", ...otherProps } = props;
 
   const className = `${styles.heading} ${styles[variant]}`;
 
-  return <h2 {...props} className={className} />;
+  return <h2 {...otherProps} className={className} />;
 };
 
 export default Heading2;

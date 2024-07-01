@@ -3,13 +3,15 @@ import CTAButton from "../../atoms/buttons/cta";
 import TextButton from "../../atoms/buttons/text";
 import Heading1 from "../../atoms/headings/heading1";
 import Heading2 from "../../atoms/headings/heading2";
-import PasswordInput from "../../atoms/inputs/password";
 import TextInput from "../../atoms/inputs/text";
 import styles from "./styles.module.css";
 
 import { Column } from "../../atoms/layout";
 
-const Login = () => {
+const Login: React.FC<{
+  onRegisterClick: () => void;
+  onLogin: () => void;
+}> = ({ onRegisterClick: handleRegisterClick, onLogin: handleLogin }) => {
   const [form, setForm] = useState({
     name: "",
     password: "",
@@ -22,8 +24,6 @@ const Login = () => {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleLogin = () => {};
-
   return (
     <div className={styles.formCard}>
       <Heading1 upperCase>Welcome Back</Heading1>
@@ -32,6 +32,7 @@ const Login = () => {
         <Column>
           <TextInput
             name="name"
+            type="text"
             label="Email or Username"
             onChange={handleFieldChange}
             placeholder="Enter your email or username"
@@ -41,8 +42,9 @@ const Login = () => {
         </Column>
         <Column>
           <TextButton>Forgot password?</TextButton>
-          <PasswordInput
+          <TextInput
             name="password"
+            type="password"
             label="Password"
             onChange={handleFieldChange}
             placeholder="Enter your password"
@@ -50,6 +52,10 @@ const Login = () => {
           />
         </Column>
         <CTAButton onClick={handleLogin}>Login now</CTAButton>
+        <div className={styles.footerRow}>
+          <span>Not registered yet?</span>
+          <TextButton onClick={handleRegisterClick}>Register →</TextButton>
+        </div>
       </div>
     </div>
   );
