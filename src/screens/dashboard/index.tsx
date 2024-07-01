@@ -1,5 +1,6 @@
 import Heading1 from "../../components/atoms/headings/heading1";
 import Para from "../../components/atoms/para";
+import CreatePost from "../../components/organisms/create-post";
 import styles from "./styles.module.css";
 
 const useUserDetails = () => {
@@ -16,6 +17,9 @@ const Dashboard = () => {
         How are you doing today? Would you like to share something with the
         community 🤗
       </Para>
+      <main className={styles.main}>
+        <CreatePost />
+      </main>
     </div>
   );
 };

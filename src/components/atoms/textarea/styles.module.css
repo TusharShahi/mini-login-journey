@@ -1,3 +1,42 @@
 .para {
   border-radius: 8px;
 }
+
+.textArea {
+  border-radius: 8px;
+  background: #191920;
+  border: 0px;
+  height: 78px;
+  resize: none;
+  padding: 2px;
+  box-sizing: content-box;
+}
+
+.textArea::placeholder {
+  line-height: 78px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.wrapper {
+  background: #191920;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  gap: 16px;
+}
+
+.iconWrapper {
+  border-radius: 100%;
+  padding: 12px;
+  background: #27292d;
+  height: 48px;
+  width: 48px;
+  vertical-align: center;
+  text-align: center;
+}
+
+.wrapper .textArea {
+  flex-grow: 1;
+}
