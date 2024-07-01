@@ -1,13 +1,13 @@
 import { useState } from "react";
-import CTAButton from "../../components/buttons/cta";
-import TextButton from "../../components/buttons/text";
-import Heading1 from "../../components/headings/heading1";
-import Heading2 from "../../components/headings/heading2";
-import PasswordInput from "../../components/inputs/password";
-import TextInput from "../../components/inputs/text";
+import CTAButton from "../../components/atoms/buttons/cta";
+import TextButton from "../../components/atoms/buttons/text";
+import Heading1 from "../../components/atoms/headings/heading1";
+import Heading2 from "../../components/atoms/headings/heading2";
+import PasswordInput from "../../components/atoms/inputs/password";
+import TextInput from "../../components/atoms/inputs/text";
 import styles from "./styles.module.css";
 
-import { Column } from "../../components/layout";
+import { Column } from "../../components/atoms/layout";
 
 const Login = () => {
   const [form, setForm] = useState({

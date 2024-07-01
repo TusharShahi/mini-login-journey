@@ -4,6 +4,7 @@
   border-radius: 8px;
   padding: 40px 24px;
   border: 2px solid red;
+  border: 2px solid #969696;
 }
 .formCard > button {
   width: 100%;

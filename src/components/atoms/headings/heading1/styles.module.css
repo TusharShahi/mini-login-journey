@@ -1,0 +1,16 @@
+.heading {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: #6b6c70;
+}
+
+.heading.banner {
+  font-size: 28px;
+  font-weight: 500;
+  color: #c5c7ca;
+}
+
+.upperCase {
+  text-transform: uppercase;
+}
