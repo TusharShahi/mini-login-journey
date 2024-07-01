@@ -1,0 +1,14 @@
+.input {
+  padding: 12px;
+  border-radius: 4px 0px 0px 0px;
+  opacity: 0px;
+  border: 1.5px solid #35373b;
+  color: #7f8084;
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+}
