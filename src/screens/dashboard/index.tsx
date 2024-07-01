@@ -27,19 +27,21 @@ const Dashboard = () => {
   return (
     <>
       <div className={styles.content}>
-        <Heading1 variant="banner">Hello {name}</Heading1>
-        <Para>
-          How are you doing today? Would you like to share something with the
-          community 🤗
-        </Para>
-        <main className={styles.main}>
-          <AsButton activate={!isLoggedIn}>
-            <CreatePost onClick={handleCreateClick} />
-          </AsButton>
+        <main className={styles.main} aria-hidden={showLoginModal}>
+          <Heading1 variant="banner">Hello {name}</Heading1>
+          <Para>
+            How are you doing today? Would you like to share something with the
+            community 🤗
+          </Para>
+          <div className={styles.posts}>
+            <AsButton activate={!isLoggedIn}>
+              <CreatePost onClick={handleCreateClick} />
+            </AsButton>
+          </div>
         </main>
       </div>
       {showLoginModal && (
-        <Modal onClose={handleCloseModal}>
+        <Modal onClose={handleCloseModal} controlFirstFocus>
           <Login />
         </Modal>
       )}

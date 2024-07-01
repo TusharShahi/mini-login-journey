@@ -5,24 +5,11 @@ type TextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
 };
 
-const TextInput: React.FC<TextInputProps> = ({
-  name,
-  label,
-  onChange,
-  placeholder,
-  value,
-}) => {
+const TextInput: React.FC<TextInputProps> = ({ label, ...props }) => {
   return (
     <>
       <label>{label}</label>
-      <input
-        type="text"
-        name={name}
-        onChange={onChange}
-        placeholder={placeholder}
-        value={value}
-        className={styles.input}
-      />
+      <input type="text" {...props} className={styles.input} />
     </>
   );
 };

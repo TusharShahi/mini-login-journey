@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 
 import { Column } from "../../atoms/layout";
 
-const Login = () => {
+const Register = () => {
   const [form, setForm] = useState({
     name: "",
     password: "",
@@ -26,7 +26,7 @@ const Login = () => {
 
   return (
     <div className={styles.formCard}>
-      <Heading1 upperCase>Welcome Back</Heading1>
+      <Heading1 upperCase>Sign Up</Heading1>
       <Heading2>Log into your account</Heading2>
       <div className={styles.form}>
         <Column>
@@ -36,7 +36,6 @@ const Login = () => {
             onChange={handleFieldChange}
             placeholder="Enter your email or username"
             value={form.name}
-            autoFocus
           />
         </Column>
         <Column>
@@ -55,4 +54,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

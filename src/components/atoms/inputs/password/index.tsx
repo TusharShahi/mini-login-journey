@@ -7,24 +7,11 @@ type PasswordInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   placeholder?: string;
 };
 
-const PasswordInput: React.FC<PasswordInputProps> = ({
-  name,
-  label,
-  onChange,
-  placeholder,
-  value,
-}) => {
+const PasswordInput: React.FC<PasswordInputProps> = ({ label, ...props }) => {
   return (
     <>
       <label className={styles.label}>{label}</label>
-      <input
-        type="password"
-        name={name}
-        onChange={onChange}
-        placeholder={placeholder}
-        value={value}
-        className={styles.input}
-      />
+      <input type="password" {...props} className={styles.input} />
     </>
   );
 };
