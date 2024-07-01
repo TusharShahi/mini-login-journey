@@ -1,0 +1,9 @@
+.button {
+  height: 32px;
+  width: 32px;
+  vertical-align: middle;
+  text-align: center;
+  background: #131319;
+  border-radius: 200%;
+  padding: 0px;
+}

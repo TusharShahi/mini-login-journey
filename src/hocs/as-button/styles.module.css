@@ -1,0 +1,4 @@
+.button:hover {
+  cursor: pointer;
+  outline: 1px solid #ccc;
+}
